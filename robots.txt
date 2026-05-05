@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://passemelvin.github.io/locationlemansgare/sitemap.xml
