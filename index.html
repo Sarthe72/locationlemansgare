@@ -235,11 +235,13 @@
     .top-nav, .bottom-nav {
       position: fixed;
       left: 0; right: 0;
+      width: 100%;
       z-index: 1000;
       background: rgba(10,14,26,0.97);
-      backdrop-filter: blur(12px);
       display: grid;
       grid-template-columns: repeat(3, 1fr);
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
     }
     .top-nav {
       top: 0;
@@ -1068,7 +1070,7 @@
 <div class="sep section-alt"></div>
 
 <!-- ═══════════════ 06 · CIRCUIT ═══════════════ -->
-<section id="circuit" class="section-alt" style="position:relative;background:url('images/circuit.jpg') center/cover no-repeat fixed;">
+<section id="circuit" class="section-alt" style="position:relative;background:url('images/circuit.jpg') center/cover no-repeat scroll;">
   <div style="position:absolute;inset:0;background:rgba(10,14,26,0.88);pointer-events:none"></div>
   <div class="section-wrap" style="position:relative;z-index:1">
     <div class="section-head">
