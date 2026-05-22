@@ -92,8 +92,8 @@
       background: var(--black);
       color: var(--white);
       overflow-x: hidden;
-      padding-top: 58px;
-      padding-bottom: 58px;
+      padding-top: 60px;
+      padding-bottom: 60px;
     }
 
     /* ─── CHECKERED ─── */
@@ -231,42 +231,40 @@
       text-transform: uppercase;
     }
 
-    /* ─── TOP NAV ─── */
-    .top-nav {
+    /* ─── NAV ─── */
+    .top-nav, .bottom-nav {
       position: fixed;
-      top: 0; left: 0; right: 0;
+      left: 0; right: 0;
       z-index: 1000;
-      height: 58px;
       background: rgba(10,14,26,0.97);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.25rem;
-      padding: 0 0.5rem;
-      overflow-x: auto;
-      scrollbar-width: none;
+      backdrop-filter: blur(12px);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
     }
-    .top-nav::-webkit-scrollbar { display: none; }
+    .top-nav {
+      top: 0;
+      border-bottom: 2px solid var(--gold);
+    }
+    .bottom-nav {
+      bottom: 0;
+      border-top: 2px solid var(--gold);
+    }
     .nav-btn {
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 2px;
-      padding: 0.4rem 0.7rem;
-      border-radius: 8px;
+      padding: 7px 4px 5px;
       text-decoration: none;
       color: var(--muted);
-      font-size: 0.65rem;
+      font-size: 0.7rem;
       font-family: 'Barlow Condensed', sans-serif;
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
       text-transform: uppercase;
-      white-space: nowrap;
-      transition: color 0.2s, background 0.2s;
+      transition: color 0.2s;
     }
-    .nav-btn:hover, .nav-btn.active { color: var(--gold); background: rgba(201,168,76,0.08); }
-    .nav-icon { font-size: 1.1rem; }
+    .nav-btn .nav-icon { font-size: 1.5rem; line-height: 1; }
+    .nav-btn:hover, .nav-btn.active { color: var(--gold); }
 
     /* ─── GALLERY STRIP ─── */
     .gallery-strip {
@@ -834,6 +832,10 @@
   <a class="nav-btn" href="#appartement"><span class="nav-icon">🏠</span><span>Appartement</span></a>
   <a class="nav-btn" href="#tarifs"><span class="nav-icon">💶</span><span>Tarifs</span></a>
   <a class="nav-btn" href="#sejour"><span class="nav-icon">🏁</span><span>Séjour</span></a>
+</nav>
+
+<!-- ─── BOTTOM NAV ─── -->
+<nav class="bottom-nav" id="bottomNav">
   <a class="nav-btn" href="#regles"><span class="nav-icon">📋</span><span>Règles</span></a>
   <a class="nav-btn" href="#circuit"><span class="nav-icon">🏎️</span><span>Circuit</span></a>
   <a class="nav-btn" href="#contact"><span class="nav-icon">📞</span><span>Contact</span></a>
@@ -1391,7 +1393,7 @@
 
   // Nav active
   const sections = document.querySelectorAll('section[id]');
-  const navBtns = document.querySelectorAll('.nav-btn');
+  const navBtns = document.querySelectorAll('.top-nav .nav-btn, .bottom-nav .nav-btn');
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (e.isIntersecting) {
