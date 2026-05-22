@@ -84,16 +84,20 @@
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-    html { scroll-behavior: smooth; font-size: 18px; }
+    html { scroll-behavior: smooth; font-size: 18px; overflow-x: hidden; max-width: 100%; }
 
     body {
       font-family: 'Barlow', sans-serif;
       background: var(--black);
       color: var(--white);
       overflow-x: hidden;
+      max-width: 100%;
+      width: 100%;
       padding-top: 58px;
       padding-bottom: 58px;
     }
+    *, *::before, *::after { box-sizing: border-box; }
+    img, video { max-width: 100%; }
 
     /* ─── CHECKERED ─── */
     .checkered-stripe {
