@@ -147,13 +147,13 @@
     }
     .hero-title {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(3.5rem, 14vw, 7rem);
-      line-height: 0.9;
+      font-size: clamp(1.4rem, 5vw, 2.2rem);
+      line-height: 1.1;
       letter-spacing: 4px;
-      color: var(--white);
-      text-shadow: 0 0 80px var(--gold-glow);
+      color: var(--muted);
+      margin-top: 0.5rem;
     }
-    .hero-title span { color: var(--gold); }
+    .hero-title span { color: var(--muted); }
     .hero-sub {
       font-family: 'Barlow Condensed', sans-serif;
       font-size: 1rem;
@@ -216,10 +216,11 @@
     }
     .hero-price-amount {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 2.4rem;
+      font-size: clamp(4rem, 16vw, 8rem);
       color: var(--gold);
-      line-height: 1;
-      letter-spacing: 2px;
+      line-height: 0.9;
+      letter-spacing: 4px;
+      text-shadow: 0 0 80px var(--gold-glow);
     }
     .hero-price-unit {
       font-family: 'Barlow Condensed', sans-serif;
@@ -764,13 +765,13 @@
 
   <div class="hero-content">
     <p class="hero-eyebrow">Résidence Cervantes · Le Mans</p>
-    <div class="hero-title">APPARTEMENT<br><span>42m²</span></div>
-    <p class="hero-sub">Centre-ville · Parking couvert · Gare 3 min</p>
     <div class="hero-price">
       <span class="hero-price-from">À partir de</span>
       <span class="hero-price-amount">52€</span>
       <span class="hero-price-unit">/ nuit</span>
     </div>
+    <p class="hero-sub">Centre-ville · Parking couvert · Gare 3 min</p>
+    <div class="hero-title">APPARTEMENT<br><span>42m²</span></div>
     <div class="hero-badges">
       <span class="hero-badge">👥 4 personnes</span>
       <span class="hero-badge">🛏️ 2 espaces nuit</span>
