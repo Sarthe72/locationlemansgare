@@ -927,9 +927,9 @@
       <div class="card-title">🏠 Le logement</div>
       <ul>
         <li>Appartement <strong>42 m²</strong> · 1er étage</li>
-        <li>Capacité : <strong>4 adultes</strong> + 1 enfant &lt; 3 ans</li>
+        <li class="lt-hide">Capacité : <strong>4 adultes</strong> + 1 enfant &lt; 3 ans</li>
         <li>Ascenseur disponible</li>
-        <li>Draps, serviettes, gel douche & shampoing <strong>fournis</strong></li>
+        <li class="lt-hide">Draps, serviettes, gel douche & shampoing <strong>fournis</strong></li>
       </ul>
     </div>
 
@@ -1277,6 +1277,7 @@
     if (tarifBtn) tarifBtn.style.display = 'none';
     document.getElementById('tarifs').style.display = 'none';
     document.getElementById('topNav').style.gridTemplateColumns = '1fr 1fr';
+    document.querySelectorAll('.lt-hide').forEach(function(el) { el.style.display = 'none'; });
   })();
 
   // Hero bg
