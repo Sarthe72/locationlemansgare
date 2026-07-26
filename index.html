@@ -1269,6 +1269,16 @@
 </section>
 
 <script>
+  // Mode location longue durée (?lt=1)
+  (function() {
+    if (new URLSearchParams(window.location.search).get('lt') !== '1') return;
+    document.querySelector('.hero-price').style.display = 'none';
+    var tarifBtn = document.querySelector('a.nav-btn[href="#tarifs"]');
+    if (tarifBtn) tarifBtn.style.display = 'none';
+    document.getElementById('tarifs').style.display = 'none';
+    document.getElementById('topNav').style.gridTemplateColumns = '1fr 1fr';
+  })();
+
   // Hero bg
   document.getElementById('heroBg').classList.add('loaded');
 
