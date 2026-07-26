@@ -238,7 +238,7 @@
       z-index: 1000;
       background: rgba(10,14,26,0.97);
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       -webkit-transform: translateZ(0);
       transform: translateZ(0);
     }
@@ -831,7 +831,6 @@
 <!-- ─── TOP NAV ─── -->
 <nav class="top-nav" id="topNav">
   <a class="nav-btn" href="#appartement"><span class="nav-icon">🏠</span><span>Appartement</span></a>
-  <a class="nav-btn" href="#tarifs"><span class="nav-icon">💶</span><span>Tarifs</span></a>
   <a class="nav-btn" href="#sejour"><span class="nav-icon">🏁</span><span>Séjour</span></a>
 </nav>
 
@@ -849,11 +848,6 @@
 
   <div class="hero-content">
     <p class="hero-eyebrow">Résidence Cervantes · Le Mans</p>
-    <div class="hero-price">
-      <span class="hero-price-from">À partir de</span>
-      <span class="hero-price-amount">52€</span>
-      <span class="hero-price-unit">/ nuit</span>
-    </div>
     <p class="hero-sub">Centre-ville · Parking couvert · Gare 3 min</p>
     <div class="hero-title">APPARTEMENT<br><span>42m²</span></div>
     <div class="hero-badges">
@@ -1143,67 +1137,6 @@
   </div>
 </section>
 
-<div class="sep"></div>
-
-<!-- ═══════════════ 09 · TARIFS ═══════════════ -->
-<section id="tarifs">
-  <div class="section-wrap">
-    <div class="section-head">
-      <span class="section-num">02</span>
-      <div class="section-label">
-        <small>Nuits & séjours</small>
-        <h2>TARIFS</h2>
-      </div>
-    </div>
-
-    <div class="card" style="margin-bottom:1rem;">
-      <div class="card-title">🌙 En semaine</div>
-      <div class="tarif-grid">
-        <div class="tarif-card">
-          <div class="tarif-persons">1 personne</div>
-          <div class="tarif-price">52€ <span>/ nuit</span></div>
-        </div>
-        <div class="tarif-card">
-          <div class="tarif-persons">2 personnes</div>
-          <div class="tarif-price">70€ <span>/ nuit</span></div>
-        </div>
-        <div class="tarif-card">
-          <div class="tarif-persons">3 personnes</div>
-          <div class="tarif-price">90€ <span>/ nuit</span></div>
-        </div>
-        <div class="tarif-card highlight">
-          <div class="tarif-persons">4 personnes</div>
-          <div class="tarif-price">104€ <span>/ nuit</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="card" style="margin-bottom:1rem;">
-      <div class="card-title">📅 Le week-end</div>
-      <div class="tarif-grid">
-        <div class="tarif-card">
-          <div class="tarif-persons">2 personnes</div>
-          <div class="tarif-price">100€ <span>/ nuit</span></div>
-        </div>
-        <div class="tarif-card highlight">
-          <div class="tarif-persons">4 personnes</div>
-          <div class="tarif-price">150€ <span>/ nuit</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="tarif-event">
-      <div style="font-size:2rem;flex-shrink:0;">🏎️</div>
-      <div class="tarif-event-body">
-        <div class="tarif-event-title">Périodes événements · 24H du Mans & autres</div>
-        <div class="tarif-event-text">Les tarifs pendant les grands événements font l'objet d'un devis personnalisé. Contactez-nous pour une disponibilité et un tarif sur mesure.</div>
-        <a class="tarif-event-link" href="https://wa.me/33682149159?text=Bonjour%2C%20je%20souhaite%20conna%C3%AEtre%20les%20tarifs%20pour%20la%20p%C3%A9riode%20%C3%A9v%C3%A9nement." target="_blank">Faire une demande →</a>
-      </div>
-    </div>
-
-  </div>
-</section>
-
 <div class="sep section-alt"></div>
 
 <!-- ═══════════════ 08 · CONTACT ═══════════════ -->
@@ -1272,11 +1205,6 @@
   // Mode location longue durée (?lt=1)
   (function() {
     if (new URLSearchParams(window.location.search).get('lt') !== '1') return;
-    document.querySelector('.hero-price').style.display = 'none';
-    var tarifBtn = document.querySelector('a.nav-btn[href="#tarifs"]');
-    if (tarifBtn) tarifBtn.style.display = 'none';
-    document.getElementById('tarifs').style.display = 'none';
-    document.getElementById('topNav').style.gridTemplateColumns = '1fr 1fr';
     document.querySelectorAll('.lt-hide').forEach(function(el) { el.style.display = 'none'; });
   })();
 
